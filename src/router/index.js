@@ -8,19 +8,19 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
-  }
-  // {
-  //   path: "/register",
-  //   name: "register",
-  //   component: () => import("../views/Register.vue"),
-  // },
+    component: Home,
+  },
+  {
+    path: "/volunteer-work",
+    name: "volunteer-work",
+    component: () => import("../views/VolunteerWork.vue"),
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;

@@ -1,17 +1,20 @@
 <template>
   <div class="home">
-    <TopHome />
+    <HeaderHome />
+    <CardsCategory />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import TopHome from "@/components/TopHome.vue";
+import HeaderHome from "@/components/HeaderHome.vue";
+import CardsCategory from "@/components/CardsCategory.vue";
 
 export default {
   name: "Home",
   components: {
-    TopHome
-  }
+    HeaderHome,
+    CardsCategory,
+  },
 };
 </script>
