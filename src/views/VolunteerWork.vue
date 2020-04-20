@@ -1,18 +1,8 @@
 <template>
   <div class="col-sm-12">
     <v-row>
-      <div class="col-sm-2">
-        <v-list dense>
-          <v-list-item
-            link
-            color="#22b173"
-            v-for="item in menu"
-            :key="item.id"
-            :to="item.router"
-          >
-            <b>{{ item.name }}</b>
-          </v-list-item>
-        </v-list>
+      <div id="menu-list" class="col-sm-2">
+        <Menu :menu="menu" />
       </div>
       <div class="col-sm-6" id="volunteer-list">
         <v-card class="py-5 elevation-0">
@@ -20,41 +10,10 @@
             <h3><b>Explore</b></h3>
           </div>
           <div class="px-4" id="top-home">
-            <v-card flat class="d-flex">
-              <div class="col-sm-4">
-                <v-select
-                  dense
-                  color="#22b173"
-                  outlined
-                  v-model="e2"
-                  :items="states"
-                  prepend-inner-icon="mdi-map-marker"
-                  menu-props="auto"
-                  hide-details
-                  label="Sinop"
-                  single-line
-                ></v-select>
-              </div>
-              <div class="col-sm-8">
-                <v-text-field
-                  dense
-                  outlined
-                  name="name"
-                  label="Ex. Crianças, educação, dança e etc"
-                  id="id"
-                ></v-text-field>
-              </div>
-            </v-card>
+            <TopHome />
           </div>
-          <div
-            id="filter"
-            class="d-flex justify-space-between col-sm-12 mx-auto py-4 align-center"
-          >
-            <v-subheader>Recentes</v-subheader>
-            <v-btn class="mx-3" outlined flat color="#22b173">
-              Filtrar
-              <v-icon>mdi-filter-variant</v-icon>
-            </v-btn>
+          <div id="filter-list">
+            <FilterList />
           </div>
           <v-list-item
             color="blue"
@@ -320,7 +279,7 @@
                         <div>
                           <v-row class="mt-5">
                             <div class="mr-5 py-0">
-                              <v-btn block large flat outlined color="#22b173">
+                              <v-btn block large outlined color="#22b173">
                                 <v-icon>mdi-bookmark-outline</v-icon>
                                 Salvar</v-btn
                               >
@@ -395,7 +354,7 @@
                         <div>
                           <v-row class="mt-5">
                             <div class="mr-5 py-0">
-                              <v-btn block large flat outlined color="#22b173">
+                              <v-btn block large outlined color="#22b173">
                                 <v-icon>mdi-bookmark-outline</v-icon>
                                 Salvar</v-btn
                               >
@@ -451,7 +410,16 @@
 </template>
 
 <script>
+import Menu from "@/components/Menu.vue";
+import TopHome from "@/components/TopHome.vue";
+import FilterList from "@/components/FilterList.vue";
+
 export default {
+  components: {
+    Menu,
+    TopHome,
+    FilterList,
+  },
   data: () => ({
     activeTab: null,
     menu: [

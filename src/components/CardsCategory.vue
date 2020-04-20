@@ -8,7 +8,14 @@
     <v-layout class="mt-5 mx-auto col-sm-10 col-mx-10 ">
       <v-row class=" mx-auto">
         <v-col class="" v-for="item in categories" :key="item.id" sm="2">
-          <v-card justify-center fill-height flat color="white" class="mx-auto">
+          <v-card
+            to="/volunteer-work"
+            justify-center
+            fill-height
+            flat
+            color="white"
+            class="mx-auto"
+          >
             <v-card flat>
               <v-img class="pb-3" height="130px" width="130" :src="item.image">
               </v-img>
