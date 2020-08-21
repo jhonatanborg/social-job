@@ -2,11 +2,11 @@
   <v-app id="card-category">
     <div class="mt-5 mx-auto">
       <h3 class="text-subtitle">
-        Tópicos de tendências & destinos de valor para 2020
+        Tópicos de tendências & destinos 11 de valor para 2020
       </h3>
     </div>
-    <v-layout class="mt-5 mx-auto col-sm-10 col-mx-10 ">
-      <v-row class=" mx-auto">
+    <v-layout class="mt-5 mx-auto col-sm-10 col-mx-10">
+      <v-row class="mx-auto">
         <v-col class="" v-for="item in categories" :key="item.id" sm="2">
           <v-card
             to="/volunteer-work"
